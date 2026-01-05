@@ -1,0 +1,16 @@
+name: task-manager Scan
+on:
+  push:
+    branches:
+      -depedency
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@depedency
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.11@depedency
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+          
