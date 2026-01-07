@@ -1,7 +1,11 @@
 FROM python:3.12
 
 WORKDIR /app
-COPY . /app/
+
+COPY ./db.py /db.py
+COPY ./main.py /main.py
+COPY ./models.py /models.py
+COPY ./schemas.py /schemas.py
 
 RUN pip install -r requirements.txt
 LABEL maintainer="Yanis le Boss"
