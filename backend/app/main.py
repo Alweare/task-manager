@@ -27,6 +27,8 @@ app.add_middleware(
 
 Base.metadata.create_all(bind=engine)
 
+taskNotFound ="Task not found"
+
 @app.get("/debug")
 def debug():
     return {"env": dict(os.environ)}
